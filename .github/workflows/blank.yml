@@ -21,7 +21,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
   Build:
-    runs-on: arc-runner-set 
+    runs-on: arc-runner-set
+    needs: Prebuild
     steps:
       - uses: actions/checkout@v4
       
@@ -34,7 +35,8 @@ jobs:
           echo test, and deploy your project.
 
   Postbuild:
-    runs-on: arc-runner-set 
+    runs-on: arc-runner-set
+    needs: Build
     steps:
       - uses: actions/checkout@v4
       
