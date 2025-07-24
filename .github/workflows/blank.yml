@@ -1,6 +1,5 @@
 name: CI
-run-name: CI workflow
-
+run-name: CI workflow triggered by ${{ github.actor }}
 on:
   push:
     branches: [ "main" ]
